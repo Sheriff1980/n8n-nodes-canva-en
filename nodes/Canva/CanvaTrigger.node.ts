@@ -13,7 +13,7 @@ export class CanvaTrigger implements INodeType {
 		group: ['trigger'],
 		version: 1,
 		subtitle: '={{$parameter["event"]}}',
-		description: 'Recebe notificações webhook do Canva em tempo real',
+		description: 'Receive real-time webhook notifications from Canva',
 		defaults: {
 			name: 'Canva Trigger',
 		},
@@ -42,51 +42,51 @@ export class CanvaTrigger implements INodeType {
 					{
 						name: 'Comment Notification',
 						value: 'comment',
-						description: 'Eventos relacionados a comentários em designs',
+						description: 'Events related to comments on designs',
 					},
 					{
 						name: 'Design Access Request',
 						value: 'design_access_request',
-						description: 'Solicitações de acesso a designs',
+						description: 'Design access requests',
 					},
 					{
 						name: 'Design Approval',
 						value: 'design_approval',
-						description: 'Aprovações de designs',
+						description: 'Design approvals',
 					},
 					{
 						name: 'Design Sharing Event',
 						value: 'design_sharing',
-						description: 'Eventos de compartilhamento de designs',
+						description: 'Design sharing events',
 					},
 					{
 						name: 'Folder Access Request',
 						value: 'folder_access_request',
-						description: 'Solicitações de acesso a pastas',
+						description: 'Folder access requests',
 					},
 					{
 						name: 'Folder Sharing Event',
 						value: 'folder_sharing',
-						description: 'Eventos de compartilhamento de pastas',
+						description: 'Folder sharing events',
 					},
 					{
 						name: 'Team Access Invitation',
 						value: 'team_access_invitation',
-						description: 'Convites de acesso à equipe',
+						description: 'Team access invitations',
 					},
 					{
 						name: 'Suggestion Notification (Preview)',
 						value: 'suggestion',
-						description: '⚠️ Preview: Notificações de sugestões em Canva Docs',
+						description: '⚠️ Preview: Suggestion notifications in Canva Docs',
 					},
 					{
 						name: 'Design Mention Notification (Preview)',
 						value: 'design_mention',
-						description: '⚠️ Preview: Menções em designs',
+						description: '⚠️ Preview: Mentions in designs',
 					},
 				],
 				default: 'comment',
-				description: 'Tipo de evento do Canva que acionará o webhook',
+				description: 'Type of Canva event that will trigger the webhook',
 			},
 			{
 				displayName: 'Design ID Filter',
@@ -106,7 +106,7 @@ export class CanvaTrigger implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Filtrar por ID específico do design (opcional)',
+				description: 'Filter by specific design ID (optional)',
 			},
 			{
 				displayName: 'Folder ID Filter',
@@ -121,7 +121,7 @@ export class CanvaTrigger implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Filtrar por ID específico da pasta (opcional)',
+				description: 'Filter by specific folder ID (optional)',
 			},
 			{
 				displayName: 'User ID Filter',
@@ -137,14 +137,14 @@ export class CanvaTrigger implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Filtrar por ID específico do usuário (opcional)',
+				description: 'Filter by specific user ID (optional)',
 			},
 			{
 				displayName: 'Validate Signature',
 				name: 'validateSignature',
 				type: 'boolean',
 				default: true,
-				description: 'Whether validar assinatura HMAC do webhook para segurança',
+				description: 'Whether to validate HMAC webhook signature for security',
 			},
 			{
 				displayName: 'Webhook Secret',
@@ -157,7 +157,7 @@ export class CanvaTrigger implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Segredo compartilhado para validação HMAC do webhook',
+				description: 'Shared secret for HMAC webhook validation',
 			},
 		],
 	};
@@ -173,13 +173,13 @@ export class CanvaTrigger implements INodeType {
 		const body = this.getBodyData() as any;
 		const headers = this.getHeaderData();
 
-		// Validação da assinatura HMAC se habilitada
+		// HMAC signature validation if enabled
 		if (validateSignature && webhookSecret) {
 			const crypto = require('crypto');
 			const signature = headers['x-canva-signature'] as string;
-			
+
 			if (!signature) {
-				console.log('Webhook rejeitado: Assinatura ausente');
+				console.log('Webhook rejected: Missing signature');
 				return {
 					noWebhookResponse: true,
 				};
@@ -194,36 +194,36 @@ export class CanvaTrigger implements INodeType {
 				Buffer.from(signature, 'hex'),
 				Buffer.from(expectedSignature, 'hex')
 			)) {
-				console.log('Webhook rejeitado: Assinatura inválida');
+				console.log('Webhook rejected: Invalid signature');
 				return {
 					noWebhookResponse: true,
 				};
 			}
 		}
 
-		// Verificar se é o evento esperado
+		// Check if it's the expected event
 		if (body.event_type !== event) {
 			return {
 				noWebhookResponse: true,
 			};
 		}
 
-		// Aplicar filtros específicos baseados no tipo de evento
+		// Apply specific filters based on event type
 		let shouldProcess = true;
 
-		// Filtros para eventos de design
+		// Filters for design events
 		if (designIdFilter && ['design.publish', 'design.share', 'design.update', 'comment.create', 'comment.resolve', 'export.complete', 'export.failed'].includes(event)) {
 			const designId = body.data?.design?.id || body.data?.design_id;
 			shouldProcess = designId === designIdFilter;
 		}
 
-		// Filtros para eventos de pasta
+		// Filters for folder events
 		if (folderIdFilter && ['folder.access_requested', 'folder.share'].includes(event)) {
 			const folderId = body.data?.folder?.id || body.data?.folder_id;
 			shouldProcess = folderId === folderIdFilter;
 		}
 
-		// Filtros para eventos de usuário
+		// Filters for user events
 		if (userIdFilter && ['user.mention', 'comment.create', 'suggestion.create'].includes(event)) {
 			const userId = body.data?.user?.id || body.data?.mentioned_user?.id || body.data?.comment?.author?.id;
 			shouldProcess = userId === userIdFilter;
@@ -235,7 +235,7 @@ export class CanvaTrigger implements INodeType {
 			};
 		}
 
-		// Enriquecer dados do webhook com informações úteis
+		// Enrich webhook data with useful information
 		const webhookData = {
 			event_type: body.event_type,
 			event_id: body.event_id,
@@ -268,4 +268,4 @@ export class CanvaTrigger implements INodeType {
 			],
 		};
 	}
-} 
+}

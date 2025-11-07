@@ -8,7 +8,7 @@ export class Canva implements INodeType {
 		group: ['tool'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Trabalhe com a API Connect do Canva para designs e assets',
+		description: 'Work with the Canva Connect API for designs and assets',
 		defaults: {
 			name: 'Canva',
 		},
@@ -40,57 +40,57 @@ export class Canva implements INodeType {
 					{
 						name: 'Asset',
 						value: 'assets',
-						description: 'Gerenciar assets (imagens, vídeos, áudios)',
+						description: 'Manage assets (images, videos, audio)',
 					},
 					{
 						name: 'Autofill',
 						value: 'autofill',
-						description: 'Preencher templates automaticamente com dados',
+						description: 'Automatically fill templates with data',
 					},
 					{
 						name: 'Brand Template',
 						value: 'brandTemplates',
-						description: 'Gerenciar templates de marca',
+						description: 'Manage brand templates',
 					},
 					{
 						name: 'Comment',
 						value: 'comments',
-						description: 'Gerenciar comentários em designs',
+						description: 'Manage comments on designs',
 					},
 					{
 						name: 'Design',
 						value: 'designs',
-						description: 'Gerenciar designs e templates',
+						description: 'Manage designs and templates',
 					},
 					{
 						name: 'Design Import',
 						value: 'designImports',
-						description: 'Importar designs de URLs',
+						description: 'Import designs from URLs',
 					},
 					{
 						name: 'Export',
 						value: 'exports',
-						description: 'Exportar designs em diferentes formatos',
+						description: 'Export designs in different formats',
 					},
 					{
 						name: 'Folder',
 						value: 'folders',
-						description: 'Gerenciar pastas de organização',
+						description: 'Manage organization folders',
 					},
 					{
 						name: 'Resize',
 						value: 'resizes',
-						description: 'Redimensionar designs',
+						description: 'Resize designs',
 					},
 					{
 						name: 'User',
 						value: 'users',
-						description: 'Informações do usuário',
+						description: 'User information',
 					},
 					{
 						name: 'Key',
 						value: 'keys',
-						description: 'Gerenciar chaves de API',
+						description: 'Manage API keys',
 					},
 				],
 				default: 'designs',
@@ -114,7 +114,7 @@ export class Canva implements INodeType {
 						name: 'Clone',
 						value: 'clone',
 						action: 'Clone design',
-						description: 'Clonar um design existente',
+						description: 'Clone an existing design',
 						routing: {
 							request: {
 								method: 'POST',
@@ -129,7 +129,7 @@ export class Canva implements INodeType {
 						name: 'Create',
 						value: 'create',
 						action: 'Create design',
-						description: 'Criar um novo design',
+						description: 'Create a new design',
 						routing: {
 							request: {
 								method: 'POST',
@@ -145,7 +145,7 @@ export class Canva implements INodeType {
 						name: 'Delete',
 						value: 'delete',
 						action: 'Delete design',
-						description: 'Deletar um design',
+						description: 'Delete a design',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -157,7 +157,7 @@ export class Canva implements INodeType {
 						name: 'Get',
 						value: 'get',
 						action: 'Get design',
-						description: 'Buscar um design específico',
+						description: 'Get a specific design',
 						routing: {
 							request: {
 								method: 'GET',
@@ -169,7 +169,7 @@ export class Canva implements INodeType {
 						name: 'Get Pages',
 						value: 'getPages',
 						action: 'Get design pages',
-						description: 'Obter metadata das páginas do design',
+						description: 'Get design pages metadata',
 						routing: {
 							request: {
 								method: 'GET',
@@ -181,7 +181,7 @@ export class Canva implements INodeType {
 						name: 'List',
 						value: 'list',
 						action: 'List designs',
-						description: 'Listar designs do usuário',
+						description: 'List user designs',
 						routing: {
 							request: {
 								method: 'GET',
@@ -200,7 +200,7 @@ export class Canva implements INodeType {
 						name: 'Update',
 						value: 'update',
 						action: 'Update design',
-						description: 'Atualizar título do design',
+						description: 'Update design title',
 						routing: {
 							request: {
 								method: 'POST',
@@ -233,7 +233,7 @@ export class Canva implements INodeType {
 						name: 'Create Export Job',
 						value: 'createJob',
 						action: 'Create export job',
-						description: 'Criar um job de exportação',
+						description: 'Create an export job',
 						routing: {
 							request: {
 								method: 'POST',
@@ -254,7 +254,7 @@ export class Canva implements INodeType {
 						name: 'Get Export Formats',
 						value: 'getFormats',
 						action: 'Get export formats',
-						description: 'Obter formatos suportados para exportação',
+						description: 'Get supported export formats',
 						routing: {
 							request: {
 								method: 'GET',
@@ -266,7 +266,7 @@ export class Canva implements INodeType {
 						name: 'Get Export Job',
 						value: 'getJob',
 						action: 'Get export job',
-						description: 'Verificar status de um job de exportação',
+						description: 'Check status of an export job',
 						routing: {
 							request: {
 								method: 'GET',
@@ -296,7 +296,7 @@ export class Canva implements INodeType {
 						name: 'Create',
 						value: 'create',
 						action: 'Create folder',
-						description: 'Criar uma nova pasta',
+						description: 'Create a new folder',
 						routing: {
 							request: {
 								method: 'POST',
@@ -312,7 +312,7 @@ export class Canva implements INodeType {
 						name: 'Delete',
 						value: 'delete',
 						action: 'Delete folder',
-						description: 'Deletar uma pasta',
+						description: 'Delete a folder',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -324,7 +324,7 @@ export class Canva implements INodeType {
 						name: 'Get',
 						value: 'get',
 						action: 'Get folder',
-						description: 'Obter informações de uma pasta específica',
+						description: 'Get information from a specific folder',
 						routing: {
 							request: {
 								method: 'GET',
@@ -336,7 +336,7 @@ export class Canva implements INodeType {
 						name: 'List',
 						value: 'list',
 						action: 'List folders',
-						description: 'Listar pastas do usuário',
+						description: 'List user folders',
 						routing: {
 							request: {
 								method: 'GET',
@@ -352,7 +352,7 @@ export class Canva implements INodeType {
 						name: 'List Items',
 						value: 'listItems',
 						action: 'List folder items',
-						description: 'Listar itens dentro de uma pasta',
+						description: 'List items inside a folder',
 						routing: {
 							request: {
 								method: 'GET',
@@ -369,7 +369,7 @@ export class Canva implements INodeType {
 						name: 'Move Item',
 						value: 'moveItem',
 						action: 'Move folder item',
-						description: 'Mover item para outra pasta',
+						description: 'Move item to another folder',
 						routing: {
 							request: {
 								method: 'POST',
@@ -385,7 +385,7 @@ export class Canva implements INodeType {
 						name: 'Update',
 						value: 'update',
 						action: 'Update folder',
-						description: 'Atualizar nome da pasta',
+						description: 'Update folder name',
 						routing: {
 							request: {
 								method: 'POST',
@@ -418,7 +418,7 @@ export class Canva implements INodeType {
 						name: 'Get Profile',
 						value: 'getProfile',
 						action: 'Get user profile',
-						description: 'Obter informações do usuário atual',
+						description: 'Get current user information',
 						routing: {
 							request: {
 								method: 'GET',
@@ -448,7 +448,7 @@ export class Canva implements INodeType {
 						name: 'List',
 						value: 'list',
 						action: 'List API keys',
-						description: 'Listar chaves de API do usuário',
+						description: 'List user API keys',
 						routing: {
 							request: {
 								method: 'GET',
@@ -478,7 +478,7 @@ export class Canva implements INodeType {
 						name: 'Delete',
 						value: 'delete',
 						action: 'Delete asset',
-						description: 'Deletar um asset',
+						description: 'Delete an asset',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -490,7 +490,7 @@ export class Canva implements INodeType {
 						name: 'Get',
 						value: 'get',
 						action: 'Get asset',
-						description: 'Buscar um asset específico',
+						description: 'Get a specific asset',
 						routing: {
 							request: {
 								method: 'GET',
@@ -502,7 +502,7 @@ export class Canva implements INodeType {
 						name: 'List',
 						value: 'list',
 						action: 'List assets',
-						description: 'Listar assets do usuário',
+						description: 'List user assets',
 						routing: {
 							request: {
 								method: 'GET',
@@ -519,7 +519,7 @@ export class Canva implements INodeType {
 						name: 'Update',
 						value: 'update',
 						action: 'Update asset',
-						description: 'Atualizar metadata de um asset',
+						description: 'Update asset metadata',
 						routing: {
 							request: {
 								method: 'POST',
@@ -535,7 +535,7 @@ export class Canva implements INodeType {
 						name: 'Upload',
 						value: 'upload',
 						action: 'Upload asset',
-						description: 'Fazer upload de um novo asset',
+						description: 'Upload a new asset',
 						routing: {
 							request: {
 								method: 'POST',
@@ -863,7 +863,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do design',
+				description: 'Design ID',
 			},
 			{
 				displayName: 'Design ID',
@@ -877,7 +877,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do design para exportar',
+				description: 'Design ID to export',
 			},
 			{
 				displayName: 'Design Type',
@@ -1033,7 +1033,7 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'presentation',
-				description: 'Tipo de design a ser criado',
+				description: 'Type of design to create',
 			},
 			{
 				displayName: 'Title',
@@ -1046,7 +1046,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Título do design',
+				description: 'Design title',
 			},
 
 			// Export parameters
@@ -1062,7 +1062,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do job de exportação',
+				description: 'Export job ID',
 			},
 			{
 				displayName: 'Export Format',
@@ -1094,7 +1094,7 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'pdf',
-				description: 'Formato de exportação',
+				description: 'Export format',
 			},
 			{
 				displayName: 'Transparent Background',
@@ -1108,7 +1108,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: false,
-				description: 'Exportar PNG com fundo transparente (disponível apenas para planos pagos)',
+				description: 'Export PNG with transparent background (available only for paid plans)',
 			},
 			{
 				displayName: 'Quality',
@@ -1136,7 +1136,7 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'medium',
-				description: 'Qualidade da exportação',
+				description: 'Export quality',
 			},
 			{
 				displayName: 'Lossless',
@@ -1150,7 +1150,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: true,
-				description: 'Usar compressão sem perda para PNG',
+				description: 'Use lossless compression for PNG',
 			},
 			{
 				displayName: 'Page Numbers',
@@ -1164,7 +1164,7 @@ export class Canva implements INodeType {
 				},
 				default: '',
 				placeholder: '1,2,3 or 1-5',
-				description: 'Páginas específicas para exportar (opcional)',
+				description: 'Specific pages to export (optional)',
 			},
 
 			// Comments parameters
@@ -1180,7 +1180,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do design para comentar',
+				description: 'Design ID to comment on',
 			},
 			{
 				displayName: 'Message',
@@ -1194,7 +1194,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Conteúdo do comentário (máximo 2048 caracteres)',
+				description: 'Comment content (maximum 2048 characters)',
 			},
 			{
 				displayName: 'Anchor Point',
@@ -1208,7 +1208,7 @@ export class Canva implements INodeType {
 				},
 				default: '',
 				placeholder: '{"x": 100, "y": 150}',
-				description: 'Posição do comentário no design (opcional)',
+				description: 'Comment position on design (optional)',
 			},
 			{
 				displayName: 'Thread ID',
@@ -1222,7 +1222,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da thread de comentário',
+				description: 'Comment thread ID',
 			},
 			{
 				displayName: 'Reply Message',
@@ -1236,7 +1236,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Conteúdo da resposta (máximo 2048 caracteres)',
+				description: 'Reply content (maximum 2048 characters)',
 			},
 			{
 				displayName: 'Reply ID',
@@ -1250,7 +1250,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID da resposta específica',
+				description: 'Specific reply ID',
 			},
 
 			// Autofill parameters
@@ -1266,7 +1266,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do template de marca para preenchimento',
+				description: 'Brand template ID for autofill',
 			},
 			{
 				displayName: 'Autofill Title',
@@ -1279,7 +1279,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Título do design gerado (opcional)',
+				description: 'Generated design title (optional)',
 			},
 			{
 				displayName: 'Autofill Data',
@@ -1293,7 +1293,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '{}',
-				description: 'Dados para preenchimento automático (formato JSON)',
+				description: 'Data for autofill (JSON format)',
 			},
 			{
 				displayName: 'Job ID',
@@ -1307,7 +1307,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do job de autofill',
+				description: 'Autofill job ID',
 			},
 
 			// Design Imports parameters
@@ -1323,7 +1323,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'URL pública do arquivo para importar',
+				description: 'Public URL of the file to import',
 			},
 			{
 				displayName: 'Import Title',
@@ -1336,7 +1336,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Título do design importado (opcional)',
+				description: 'Imported design title (optional)',
 			},
 			{
 				displayName: 'Import Job ID',
@@ -1350,7 +1350,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do job de importação',
+				description: 'Import job ID',
 			},
 
 			// Resize parameters
@@ -1366,7 +1366,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do design para redimensionar',
+				description: 'Design ID to resize',
 			},
 			{
 				displayName: 'New Design Type',
@@ -1426,7 +1426,7 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'instagram_post',
-				description: 'Novo tipo de design para redimensionamento',
+				description: 'New design type for resizing',
 			},
 			{
 				displayName: 'Resize Title',
@@ -1439,7 +1439,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Título do design redimensionado (opcional)',
+				description: 'Resized design title (optional)',
 			},
 			{
 				displayName: 'Resize Job ID',
@@ -1453,7 +1453,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do job de redimensionamento',
+				description: 'Resize job ID',
 			},
 
 			// Folder parameters
@@ -1469,7 +1469,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Nome da pasta',
+				description: 'Folder name',
 			},
 
 			// Pagination parameters
@@ -1483,7 +1483,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: 10,
-				description: 'Número máximo de itens a retornar (1-100)',
+				description: 'Maximum number of items to return (1-100)',
 			},
 			{
 				displayName: 'Continuation',
@@ -1495,7 +1495,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Token de continuação para paginação',
+				description: 'Continuation token for pagination',
 			},
 
 			// Asset parameters
@@ -1511,7 +1511,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'ID do asset',
+				description: 'Asset ID',
 			},
 
 			// Common parameters
@@ -1541,7 +1541,7 @@ export class Canva implements INodeType {
 					},
 				},
 				default: '',
-				description: 'Texto para buscar designs',
+				description: 'Text to search designs',
 			},
 			{
 				displayName: 'Ownership',
@@ -1568,7 +1568,7 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'owned',
-				description: 'Filtro de propriedade dos designs',
+				description: 'Design ownership filter',
 			},
 			{
 				displayName: 'Sort By',
@@ -1591,8 +1591,8 @@ export class Canva implements INodeType {
 					},
 				],
 				default: 'modified',
-				description: 'Ordenação dos resultados',
+				description: 'Results sorting',
 			},
 		],
 	};
-} 
+}

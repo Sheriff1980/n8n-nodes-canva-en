@@ -12,7 +12,7 @@ export class CanvaApi implements ICredentialType {
 	extends = ['oAuth2Api'];
 	properties: INodeProperties[] = [
 		{
-			displayName: '⚠️ CONFIGURAÇÃO OBRIGATÓRIA DE SCOPES',
+			displayName: '⚠️ REQUIRED SCOPES CONFIGURATION',
 			name: 'scopesNotice',
 			type: 'notice',
 			default: '',
@@ -93,4 +93,4 @@ export class CanvaApi implements ICredentialType {
 			method: 'GET',
 		},
 	};
-} 
+}
