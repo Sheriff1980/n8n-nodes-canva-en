@@ -1,7 +1,7 @@
 # n8n-nodes-canva
 
 <p align="center"><br>
-This Community Node is a 100% free solution, created with the intention of simplifying and helping the entire community to integrate and make the most of the main resources offered by the <b>Canva Connect API</b> in their N8N projects.
+ Created by Ramon Matias, I only translated from Portugese to English. This Community Node is a 100% free solution, created with the intention of simplifying and helping the entire community to integrate and make the most of the main resources offered by the <b>Canva Connect API</b> in their N8N projects.
 </p>
 <br>
 	
