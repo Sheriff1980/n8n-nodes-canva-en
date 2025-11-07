@@ -16,7 +16,7 @@ export class CanvaApi implements ICredentialType {
 			name: 'scopesNotice',
 			type: 'notice',
 			default: '',
-			description: 'ATENÇÃO: Para evitar erro "invalid_scope", habilite TODOS os 18 scopes no seu Canva Developer Portal: app:read, app:write, asset:read, asset:write, brandtemplate:content:read, brandtemplate:meta:read, comment:read, comment:write, design:content:read, design:content:write, design:meta:read, design:permission:read, design:permission:write, folder:read, folder:write, folder:permission:read, folder:permission:write, profile:read',
+			description: 'ATTENTION: To avoid the "invalid_scope" error, enable ALL 18 scopes in your Canva Developer Portal: app:read, app:write, asset:read, asset:write, brandtemplate:content:read, brandtemplate:meta:read, comment:read, comment:write, design:content:read, design:content:write, design:meta:read, design:permission:read, design:permission:write, folder:read, folder:write, folder:permission:read, folder:permission:write, profile:read',
 		},
 		{
 			displayName: 'Grant Type',
@@ -44,8 +44,8 @@ export class CanvaApi implements ICredentialType {
 			type: 'string',
 			default: '',
 			required: true,
-			description: 'Client ID obtido no Canva Developer Portal',
-			hint: 'IMPORTANTE: Certifique-se de habilitar TODOS os 18 scopes na seção Scopes da sua integração no Canva Developer Portal',
+			description: 'Client ID obtained from the Canva Developer Portal',
+			hint: 'IMPORTANT: Make sure to enable ALL 18 scopes in the Scopes section of your integration in the Canva Developer Portal',
 		},
 		{
 			displayName: 'Client Secret',
@@ -54,8 +54,8 @@ export class CanvaApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 			required: true,
-			description: 'Client Secret gerado no Canva Developer Portal',
-			hint: 'Se receber erro "invalid_scope", verifique se todos os scopes estão habilitados na sua integração',
+			description: 'Client Secret generated from the Canva Developer Portal',
+			hint: 'If you receive an "invalid_scope" error, verify that all scopes are enabled in your integration',
 		},
 		{
 			displayName: 'Scope',
