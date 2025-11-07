@@ -3,6 +3,7 @@ import {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	IWebhookFunctions,
+	NodeConnectionType,
 } from 'n8n-workflow';
 
 export class CanvaTrigger implements INodeType {
@@ -18,7 +19,7 @@ export class CanvaTrigger implements INodeType {
 			name: 'Canva Trigger',
 		},
 		inputs: [],
-		outputs: ['main'],
+		outputs: [NodeConnectionType.Main],
 		credentials: [
 			{
 				name: 'canvaApi',

@@ -1,4 +1,5 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionType } from 'n8n-workflow';
 
 export class Canva implements INodeType {
 	description: INodeTypeDescription & { usableAsTool?: boolean } = {
@@ -12,8 +13,8 @@ export class Canva implements INodeType {
 		defaults: {
 			name: 'Canva',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionType.Main],
+		outputs: [NodeConnectionType.Main],
 		usableAsTool: true,
 		credentials: [
 			{
